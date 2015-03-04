@@ -1,8 +1,8 @@
 # Material Design Cockpit
 A basic system cockpit, using angular JS and Bootstrap (Material Design) theme.
 
-Authors:
+*Authors:*
 * Skeddy
 * Tiago
 
-Date: 04/03/2015
+*Date:* 04/03/2015
