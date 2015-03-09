@@ -23,34 +23,50 @@
     
     
 
-    // controllers
-    .controller("GetValuesDB", [ '$http', function( $http ) {
+// controllers
+.controller('GetValuesDB', [ '$http', function( $http ) {
 
-    	
+       
         //initiaize variable for result
         var resultSet = this;
         
         // make sure the array initialize empty
-        resultSet.employees = [];
-        resultSet.users = [];
+        resultSet.service = [];
+        resultSet.event = [];
+        resultSet.message = [];
+        resultSet.part = [];
         
         
         
         
-        // get the JSON employees from DB
-        $http.get('http://localhost/chart/JSON/employees.php')
+        // POST the JSON services
+        $http.POST('http://ukd13291:8083/v1/wrstatistics/service')
         .success(function ( data ) {
-        	resultSet.employees = data;
+              resultSet.service = data;
         });
         
         
-        // get the JSON users from DB
-        $http.get('http://localhost/chart/JSON/users.php')
+        // POST the JSON event
+        $http.POST('http://ukd13291:8083/v1/wrstatistics/event')
         .success(function ( data ) {
-        	resultSet.users = data;
+              resultSet.event = data;
         });
+        
+        
+        // POST the JSON message
+        $http.POST('http://ukd13291:8083/v1/wrstatistics/message')
+        .success(function( data ) {
+              resultSet.message = data;
+        });
+        
+        
+        // POST the JSON part
+        $http.POST('http://ukd13291:8083/v1/wrstatistics/part')
+        .success(function( data ) {
+              resultSet.part = data;
+        });
+        
     }])
-    
     
     
     
