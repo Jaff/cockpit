@@ -72,7 +72,7 @@
     
     .controller("Functions", function ($scope) {
     	
-        this.title = "Chart 1.0";
+        this.title = "Chart 1.2";
         this.table1 = "Table with JSON result from DB - Employees";
         this.table2 = "Table with JSON result from DB - Users";
         this.CharTitle = "Txd vs Rvcd";
