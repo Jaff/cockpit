@@ -36,22 +36,17 @@
         resultSet.message = [];
         resultSet.part = [];
         
-        
-        
-        
         // POST the JSON services
         $http.POST('http://ukd13291:8083/v1/wrstatistics/service')
         .success(function ( data ) {
               resultSet.service = data;
         });
         
-        
         // POST the JSON event
         $http.POST('http://ukd13291:8083/v1/wrstatistics/event')
         .success(function ( data ) {
               resultSet.event = data;
         });
-        
         
         // POST the JSON message
         $http.POST('http://ukd13291:8083/v1/wrstatistics/message')
@@ -67,9 +62,7 @@
         });
         
     }])
-    
-    
-    
+     
     .controller("Functions", function ($scope) {
     	
         this.title = "Chart 1.2";
@@ -83,4 +76,3 @@
         this.updateTime = "09:55:23";
 
     });
-    
