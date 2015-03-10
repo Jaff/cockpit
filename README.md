@@ -9,4 +9,6 @@ Authors:
 
 Date: 09/03/2015
 
-_Remember..... Always do the needful_
+## Changelog
+
+*10/03/2015* - Step data was added to Line Chart
