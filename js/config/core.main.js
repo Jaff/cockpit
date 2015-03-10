@@ -71,7 +71,7 @@
         this.CharTitle = "Txd vs Rvcd";
         this.CharTitle1 = "Chart Number Two - Radar";
         this.CharTitle2 = "Current file processing status";
-        this.CharTitle3 = "Files processed in last 60 mins";
+        this.CharTitle3 = "Total Km walked";
         this.CharTitle4 = "Chart Number Five - Polar";
         this.updateTime = "09:55:23";
 

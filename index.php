@@ -175,7 +175,7 @@
         <div class="row">
         
         <!-- Chart Presentation -->
-        <div class="col-md-6" id="line-chart" ng-controller="LineCtrl">
+        <div class="col-md-12" id="line-chart" ng-controller="LineCtrl">
  			<div class="bs-component">
                 <div class="panel panel-default">
                 
