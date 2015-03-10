@@ -92,4 +92,29 @@ var char = angular.module('CharModule', [ 'chart.js' ])
 		$scope.labels = [ '2006', '2007', '2008', '2009', '2010' ];
 		$scope.data = [ 65, 59, 80, 81, 56 ];
 			
-} ]);
+} ])
+
+// controllers
+.controller('SleepChart', [ '$scope', '$http', function($scope, $http ) 
+                           
+    {
+
+        //initiaize variable for result
+        var resultSet = this;
+        
+        // make sure the array initialize empty
+        resultSet.sleep = [];
+        
+        // get the JSON employees from DB
+        $http.get('http://localhost/chart/cockpit/json/fitness.php')
+        .success(function ( data )
+        {
+        resultSet.sleep = data;
+        
+        $scope.labels = [ '{{resultSet.sleep.date}}' ];
+		$scope.series = [ 'Awake', 'Asleep' ];
+        $scope.data = [ [ '{{sleep.mins_awake}}' ], [ '{{sleep.mins_asleep}}' ] ];
+        
+        });
+        
+    }]);

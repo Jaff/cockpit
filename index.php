@@ -225,7 +225,65 @@
                 </div>
            </div>
         </div>
-        <!-- Chart Presentation --> 
+        <!-- Chart Presentation -->
+        
+        <!-- Chart Presentation -->
+        <div class="col-md-6" id="line-chart" ng-controller="SleepChart as results">
+ 			<div class="bs-component">
+                <div class="panel panel-default">
+                
+                 <div class="panel-heading">
+				 <h3 class="panel-title">Sleep Data</h3>
+			     </div>
+				
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                            <th>Date</th>
+                            <th>Mins Sleep</th>
+                            <th>Mins awake</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in results.sleep">
+                            <td>{{item.date}}</td>
+                            <td>{{item.mins_asleep}}</td>
+                            <td>{{item.mins_awake}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+				</div>
+                </div>
+           </div>
+        </div>
+
+        <!-- Chart Presentation -->
+            
+        <!-- Chart Presentation -->
+        <div class="col-md-12" id="line-chart2" ng-controller="SleepChart">
+ 			<div class="bs-component">
+                <div class="panel panel-default">
+                
+                 <div class="panel-heading">
+				 <h3 class="panel-title">{{genvar.CharTitle3}}</h3>
+			     </div>
+				
+                <div class="panel-body">
+                		<div>
+							<canvas id="line-chart2" class="chart chart-line" 
+							data="data"
+					 		labels="labels"
+                            series="series"
+                            legend="true">
+					 		</canvas>
+						</div>
+				</div>
+                </div>
+           </div>
+        </div>
+
+        <!-- Chart Presentation -->  
         
         <!-- Rows of charts -->
         </div>
