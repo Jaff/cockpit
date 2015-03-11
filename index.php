@@ -61,6 +61,7 @@
         
         <!-- Main header and notifcations -->
         
+<!--
         <div class="bs-component">
             <div class="alert alert-dismissible alert-danger">
             <button class="close" data-dismiss="alert" type="button">×</button>
@@ -69,6 +70,7 @@
             <p>Last update: {{genvar.updateTime}}</p>
             </div>
         </div>
+-->
         
         <div class="bs-component">
             <div class="panel panel-success">
@@ -83,6 +85,8 @@
    	                </div>
             </div>
         </div>
+
+        <!-- Main header and notifcations -->
         
         <!-- Rows of charts -->
         <div class="row">
@@ -175,6 +179,7 @@
         <div class="row">
         
         <!-- Chart Presentation -->
+<!--
         <div class="col-md-12" id="line-chart" ng-controller="LineCtrl">
  			<div class="bs-component">
                 <div class="panel panel-default">
@@ -198,6 +203,7 @@
                 </div>
            </div>
         </div>
+-->
 
         <!-- Chart Presentation -->  
             
@@ -263,7 +269,9 @@
         <!-- Chart Presentation -->
             
         <!-- Chart Presentation -->
-        <div class="col-md-12" id="line-chart2" ng-controller="SleepChart">
+            
+            <!-- Try this http://jsfiddle.net/rnX2Z/1/ -->
+        <div class="col-md-12" id="line-chart2" ng-controller="SleepChart as results">
  			<div class="bs-component">
                 <div class="panel panel-default">
                 
@@ -273,8 +281,8 @@
 				
                 <div class="panel-body">
                 		<div>
-							<canvas id="line-chart2" class="chart chart-line"  
-							data="data"
+							<canvas ng-repeat="item in results.sleep" id="line-chart2" class="chart chart-line"  
+							data="[ {{item.mins_asleep}} ]"
 					 		labels="labels"
                             series="series"
                             legend="true">

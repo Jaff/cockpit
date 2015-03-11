@@ -112,7 +112,7 @@ var char = angular.module('CharModule', [ 'chart.js' ])
         .success(function ( data )
         {
         resultSet.sleep = data;
-            data_fin = resultSet.sleep.date_range;
+        data_fin = resultSet.sleep.date_range;
         
         $scope.labels = [ data_fin ];
 		$scope.series = [ 'Awake', 'Asleep' ];
