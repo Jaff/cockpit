@@ -240,14 +240,16 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                            <th>Date</th>
+                            <th>ID</th>
+                            <th>Date Range</th>
                             <th>Mins Sleep</th>
                             <th>Mins awake</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="item in results.sleep">
-                            <td>{{item.date}}</td>
+                            <td>{{item.id}}</td>
+                            <td>{{item.date_range}}</td>
                             <td>{{item.mins_asleep}}</td>
                             <td>{{item.mins_awake}}</td>
                             </tr>
@@ -271,7 +273,7 @@
 				
                 <div class="panel-body">
                 		<div>
-							<canvas id="line-chart2" class="chart chart-line" 
+							<canvas id="line-chart2" class="chart chart-line"  
 							data="data"
 					 		labels="labels"
                             series="series"
