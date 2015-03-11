@@ -281,8 +281,8 @@
 				
                 <div class="panel-body">
                 		<div>
-							<canvas ng-repeat="item in results.sleep" id="line-chart2" class="chart chart-line"  
-							data="[ {{item.mins_asleep}} ]"
+							<canvas id="line-chart2" class="chart chart-line"  
+							data="data"
 					 		labels="labels"
                             series="series"
                             legend="true">

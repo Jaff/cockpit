@@ -101,8 +101,6 @@ var char = angular.module('CharModule', [ 'chart.js' ])
 
         //initiaize variable for result
         var resultSet = this;
-        var data_fin;
-        
         
         // make sure the array initialize empty
         resultSet.sleep = [];
@@ -112,11 +110,25 @@ var char = angular.module('CharModule', [ 'chart.js' ])
         .success(function ( data )
         {
         resultSet.sleep = data;
-        data_fin = resultSet.sleep.date_range;
+            
+        var data_range = [];
+            for (var i = 0; i < resultSet.sleep.length; i++) {
+            data_range.push(resultSet.sleep[i].date_range);  
+            }
+            
+        var data_awake = [];
+            for (var i = 0; i < resultSet.sleep.length; i++) {
+            data_awake.push(resultSet.sleep[i].mins_awake);  
+            }
+            
+        var data_asleep = [];
+            for (var i = 0; i < resultSet.sleep.length; i++) {
+            data_asleep.push(resultSet.sleep[i].mins_asleep);  
+            }
         
-        $scope.labels = [ data_fin ];
+        $scope.labels = data_range;
 		$scope.series = [ 'Awake', 'Asleep' ];
-        $scope.data = [ [ resultSet.sleep.mins_awake ], [ resultSet.sleep.mins_asleep ] ];
+        $scope.data = data_awake , data_asleep;
         
         })
         .error(function ( msg )
