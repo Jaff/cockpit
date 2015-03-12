@@ -90,12 +90,12 @@
         <div class="row">
                     
         <!-- Chart Presentation -->
-        <div class="col-md-4" id="bar-chart" ng-controller="BarCtrl">
+        <div class="col-md-12" id="bar-chart" ng-controller="BarCtrl">
  			<div class="bs-component">
                 <div class="panel panel-default">
                 
                  <div class="panel-heading">
-				 <h3 class="panel-title">{{genvar.CharTitle}}</h3>
+				 <h3 class="panel-title">Angular data from Database</h3>
 			     </div>
 				
                 <div class="panel-body">
@@ -114,7 +114,13 @@
                 </div>
            </div>
         </div>
-        <!-- Chart Presentation --> 
+        <!-- Chart Presentation -->
+            
+        </div> 
+        <!-- Rows of charts -->
+        
+        <!-- Rows of charts -->
+        <div class="row">
         
         <!-- Chart Presentation -->
         <div class="col-md-4" id="radar-chart" ng-controller="RadarCtrl">
@@ -170,12 +176,6 @@
         </div>
         <!-- Chart Presentation -->  
 
-        </div> 
-        <!-- Rows of charts -->
-
-        <!-- Rows of charts -->
-        <div class="row">
-        
         <!-- Chart Presentation -->
 <!--
         <div class="col-md-12" id="line-chart" ng-controller="LineCtrl">
@@ -206,7 +206,7 @@
         <!-- Chart Presentation -->  
             
         <!-- Chart Presentation -->
-        <div class="col-md-6" id="polar-area-chart" ng-controller="PolarAreaCtrl">
+        <div class="col-md-4" id="polar-area-chart" ng-controller="PolarAreaCtrl">
  			<div class="bs-component">
                 <div class="panel panel-default">
                 
@@ -232,12 +232,12 @@
         <!-- Chart Presentation -->
         
         <!-- Chart Presentation -->
-        <div class="col-md-6" id="line-chart" ng-controller="SleepChart as results">
+        <div class="col-md-12" id="line-chart" ng-controller="SleepChart as results">
  			<div class="bs-component">
                 <div class="panel panel-default">
                 
                  <div class="panel-heading">
-				 <h3 class="panel-title">Sleep Data</h3>
+				 <h3 class="panel-title">Sleep Data (Directly from Database)</h3>
 			     </div>
 				
                 <div class="panel-body">
@@ -266,9 +266,16 @@
 
         <!-- Chart Presentation -->
             
-        <!-- Chart Presentation -->
+        </div> 
+        <!-- Rows of charts -->
+
+        <!-- Rows of charts -->
+        <!-- 
+        <div class="row">
             
-<!--       <div class="col-md-12" id="line-chart2" ng-controller="SleepChart as results">
+        <!-- Chart Presentation
+            
+        <div class="col-md-12" id="line-chart2" ng-controller="SleepChart as results">
  			<div class="bs-component">
                 <div class="panel panel-default">
                 
@@ -288,12 +295,13 @@
 				</div>
                 </div>
            </div>
-        </div>-->
-
-        <!-- Chart Presentation -->  
-        
-        <!-- Rows of charts -->
         </div>
+
+        <!-- Chart Presentation 
+        
+        <!-- Rows of charts
+        </div>
+        -->
         
     <!-- End of container -->
     </div>

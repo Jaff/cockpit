@@ -1,7 +1,7 @@
 <?php
     //Create Database connection
     
-    $db = mysql_connect("localhost:3307","root", "root4128");
+    $db = mysql_connect("localhost:3307","root", "");
     if (!$db) {
         die('Could not connect to db: ' . mysql_error());
     }
