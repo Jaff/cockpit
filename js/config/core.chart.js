@@ -1,26 +1,29 @@
 var char = angular.module('CharModule', [ 'chart.js' ])
 
-.controller('LineCtrl', ['$scope', function($scope) 
+.controller('LineCtrl', ['$rootScope', '$scope', function( $rootScope, $scope ){
      
-       {
-           
-       // the rest
-		$scope.options = {
-            animationEasing : "easeOutElastic",              /* Set the easing animation (http://easings.net) */
-            showTooltips : false
-		};
-			
-			$scope.labels = [ '24-12-2014',  '25-12-2014',  '26-12-2014',  '27-12-2014',  '28-12-2014',  '29-12-2014',  '30-12-2014',  '31-12-2014',  '01-01-2015',  '02-01-2015',  '03-01-2015',  '04-01-2015',  '07-01-2015',  '08-01-2015',  '09-01-2015',  '10-01-2015',  '11-01-2015',  '12-01-2015',  '16-01-2015',  '17-01-2015',  '21-01-2015',  '23-01-2015',  '24-01-2015',  '25-01-2015',  '26-01-2015',  '27-01-2015',  '30-01-2015',  '31-01-2015',  '03-02-2015',  '04-02-2015',  '06-02-2015',  '07-02-2015',  '08-02-2015',  '13-02-2015',  '14-02-2015',  '15-02-2015',  '16-02-2015',  '17-02-2015',  '20-02-2015',  '21-02-2015',  '22-02-2015',  '23-02-2015',  '24-02-2015',  '25-02-2015',  '26-02-2015',  '27-02-2015',  '28-02-2015',  '01-03-2015',  '02-03-2015',  '03-03-2015',  '04-03-2015',  '05-03-2015',  '06-03-2015',  '07-03-2015',  '08-03-2015',  '09-03-2015' ];
-			$scope.series = [ 'Total km walked' ];
-			$scope.data = [ [ 0, 4, 4.56, 3.61, 5.01, 4.63, 5.35, 9.58, 4.62, 5.84, 4.33, 2.82, 5.9, 6.02, 5.26, 5.07, 7.81, 3.75, 7.62, 6.35, 4.92, 5.39, 5.22, 11.51, 6.57, 5.49, 5.06, 5.7, 4.84, 5.09, 7.8, 7.3, 3.68, 5.09, 9.6, 6.47, 6.39, 4.67, 4.66, 9.93, 5.86, 6.24, 4.73, 4.28, 5.59, 4.18, 4.39, 7.13, 7.29, 4.38, 7.01, 4.58, 4.51, 9.1, 4.59, 5.39 ] ];
-			
-} ])
+	//var read = this;
+	var result = $rootScope;
+	
+	$scope.employees = [];
+    $scope.labels = [ '14:00', '14:05', '14:10', '14:15', '14:20', '14:25', 
+                       '14:30', '14:35', '14:40', '14:45', '14:50', '14:55', '15:00' ];
+     
+     $scope.series = [ 'Series A', 'Series B' ];
+     $scope.data = [ 
+    	                [ 32, 24, 20, 39, 45, 36, 0, 0, 0, 60, 40, 20, 30, 36 ], 
+    	                [ 48, 52, 64, 64, 72, 128, 0, 0, 0, 70, 70, 56, 64, 68 ] 
+    				  ];
+		
+}])
 
 
-
-.controller('BarCtrl', ['$scope', function($scope) 
+.controller('BarCtrl', ['$rootScope', '$scope', function( $rootScope, $scope) 
     {		
 	
+		var result = $rootScope;
+		$scope.resultSet = [];
+		
 		// the rest
 		$scope.options = {
 				scaleShowVerticalLines : false,
@@ -37,12 +40,29 @@ var char = angular.module('CharModule', [ 'chart.js' ])
 		};
 			
 
-		$scope.labels = [ '2006', '2007', '2008', '2009', '2010', '2011', '2012' ];
+		$scope.labels = [ /*'2006', '2007', '2008', '2009', '2010', '2011', '2012'*/ ];
 		$scope.series = [ 'Series A', 'Series B' ];
         $scope.data = [ [ 65, 59, 80, 81, 56, 55, 40 ], [ 28, 48, 40, 19, 86, 27, 90 ] ];
-        $scope.colours = ['#000000','#008000'] /* This changes the outline of the series. This is both outline and fill */
+        $scope.colours = ['#F00000','#008000'] /* This changes the outline of the series. This is both outline and fill */
 
-			
+        
+        result.$on('sleep', function(event, data) {
+        	
+        	$scope.resultSet = data;
+        	console.log($scope.resultSet);
+        	
+        	for(var i = 0; i < $scope.resultSet.length; i++)
+        		{
+        			//alert( $scope.resultSet[i].date_joined );
+        			//$scope.labels = [ $scope.resultSet[i].date_joined ];
+	        		angular.forEach($scope.resultSet, function(value, key) {
+	            		
+	            		 $scope.labels = value.date[key]; //alert(value.date) ;
+	            		
+	            	});
+        		};
+        })
+        
 } ])
 
 
@@ -92,6 +112,7 @@ var char = angular.module('CharModule', [ 'chart.js' ])
 		$scope.labels = [ '2006', '2007', '2008', '2009', '2010' ];
 		$scope.data = [ 65, 59, 80, 81, 56 ];
 			
+} ]);
 } ])
 
 // controllers

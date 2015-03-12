@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="ChartCoreMain">
+<html lang="en" ng-app="ChartCoreMain" ng-controller="GetValuesDB">
 <head>
   
     <meta charset="utf-8">
@@ -61,16 +61,14 @@
         
         <!-- Main header and notifcations -->
         
-<!--
         <div class="bs-component">
             <div class="alert alert-dismissible alert-danger">
             <button class="close" data-dismiss="alert" type="button">×</button>
             <strong>Important!</strong>
             <p>We are currently aware of an issue with system x and are working to resolve it.</p>
-            <p>Last update: {{genvar.updateTime}}</p>
+           <p>Last update: {{ genvar.updateTime | date:'dd-MM-yyyy HH:mm:ss'}}</p>
             </div>
         </div>
--->
         
         <div class="bs-component">
             <div class="panel panel-success">
@@ -101,7 +99,7 @@
 			     </div>
 				
                 <div class="panel-body">
-                <p>Last update: {{genvar.updateTime}}</p>
+                <p>Last update: {{ genvar.updateTime | date:'dd-MM-yyyy HH:mm:ss'}}</p>
 						<div>
 							<canvas id="bar" class="chart chart-bar"
 							data="data"
@@ -128,7 +126,7 @@
 			     </div>
 				
                 <div class="panel-body">
-                <p>Last update: {{genvar.updateTime}}</p>
+                <p>Last update: {{ genvar.updateTime | date:'dd-MM-yyyy HH:mm:ss'}}</p>
 						<div>
 							<canvas id="radar" class="chart chart-radar"
 							data="data"
@@ -155,7 +153,7 @@
 			     </div>
 				
                 <div class="panel-body">
-                <p>Last update: {{genvar.updateTime}}</p>
+                <p>Last update: {{ genvar.updateTime | date:'dd-MM-yyyy HH:mm:ss'}}</p>
 						<div>
 							<canvas id="pie" class="chart chart-pie"
 							data="data"
@@ -217,7 +215,7 @@
 			     </div>
 				
                 <div class="panel-body">
-                <p>Last update: {{genvar.updateTime}}</p>
+                 <p>Last update: {{ genvar.updateTime | date:'dd-MM-yyyy HH:mm:ss'}}</p>
 						<div>
 							<canvas id="polar" class="chart chart-polar-area" 
 							data="data"
@@ -270,8 +268,7 @@
             
         <!-- Chart Presentation -->
             
-            <!-- Try this http://jsfiddle.net/rnX2Z/1/ -->
-        <div class="col-md-12" id="line-chart2" ng-controller="SleepChart as results">
+<!--       <div class="col-md-12" id="line-chart2" ng-controller="SleepChart as results">
  			<div class="bs-component">
                 <div class="panel panel-default">
                 
@@ -291,7 +288,7 @@
 				</div>
                 </div>
            </div>
-        </div>
+        </div>-->
 
         <!-- Chart Presentation -->  
         
