@@ -5,7 +5,7 @@
     
     $db = mysql_connect($host, $username, $passwd);
     if (!$db) {
-        die('Could not connect to db: ' . mysql_error());
+        die('Idiot..... can\'t find the database' . mysql_error());
     }
   
     //Select the Database
@@ -19,7 +19,7 @@
      
     while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
         $row_array['id'] = $row['id'];
-        $row_array['date'] = $row['date'];
+        $row_array['date_range'] = $row['date'];
         $row_array['mins_asleep'] = $row['mins_asleep'];
         $row_array['mins_awake'] = $row['mins_awake'];
 

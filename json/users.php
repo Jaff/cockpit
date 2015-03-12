@@ -1,13 +1,15 @@
 <?php
     //Create Database connection
     
-    $db = mysql_connect("localhost:3307","root", "");
+    include("connect.php");
+    
+    $db = mysql_connect($host, $username, $passwd);
     if (!$db) {
-        die('Could not connect to db: ' . mysql_error());
+        die('Idiot..... can\'t find the database' . mysql_error());
     }
   
     //Select the Database
-    mysql_select_db("chartdb", $db);
+    mysql_select_db($dbname, $db);
      
     //Replace * in the query with the column names.
     $result = mysql_query("select * from users", $db); 
