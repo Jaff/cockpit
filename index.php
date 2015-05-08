@@ -266,26 +266,6 @@
 
         <!-- Chart Presentation -->
             
-        <!-- Chart Presentation -->
-        <div class="col-md-6" id="line-chart" ng-controller="SleepChart as results">
- 			<div class="bs-component">
-                <div class="panel panel-danger">
-                
-                 <div class="panel-heading">
-				 <h3 class="panel-title">Error</h3>
-			     </div>
-				
-                <div class="panel-body">
-
-                    <div align="center"><img src="img/error.gif" /></div>
-                    
-				</div>
-                </div>
-           </div>
-        </div>
-
-        <!-- Chart Presentation -->
-            
         </div> 
         <!-- Rows of charts -->
 
